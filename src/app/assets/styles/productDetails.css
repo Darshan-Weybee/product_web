@@ -1,0 +1,51 @@
+.product-image{
+    width: 50%;
+}
+
+.product-title{
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.product-category{
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.product-brand{
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.product-price-tag{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: gray;
+}
+
+.product-price-rate{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.product-discount-tag{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: gray;
+}
+
+.product-discount{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.star-img-detail{
+    width: 35%;
+}
+
+.product-rating{
+    font-size: 1.2rem;
+    font-weight: 400;
+}

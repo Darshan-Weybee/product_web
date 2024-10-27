@@ -1,0 +1,21 @@
+@import './app/assets/styles/productListing.css';
+@import './app/assets/styles/variable.css';
+@import './app/assets/styles/common.css';
+@import './app/assets/styles/productDetails.css';
+@import './app/assets/styles/carousel.css';
+@import './app/assets/styles/Navrbar.css';
+@import './app/assets/styles/auth.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,30 @@
+.productList-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.thumbnail-container{
+    width  : 80%;
+    height: auto;
+}
+
+.product-link{
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.product-link:hover{
+    text-decoration: underline;
+}
+
+.product-category{
+    text-transform: capitalize;
+    color: gray;
+    font-weight: 400;
+}
+
+.star-img{
+    width: 25%;
+}
