@@ -1,0 +1,52 @@
+.profile-container{
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+
+.profile-details{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.profile-btn{
+    color: white !important;
+    background-color: orange !important;
+}
+
+.profile-image{
+    width: 20%;
+}
+
+.user-name{
+    font-weight: semibold;
+    font-size: 14px;
+    color: gray;
+}
+
+.prfile-input-fileds{
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+@media screen and (max-width: 1199px) {
+    .profile-container{
+        width: 80%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .profile-container{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .profile-container{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 575px) {
+}

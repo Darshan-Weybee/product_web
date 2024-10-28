@@ -5,6 +5,7 @@ import { getProducDetail } from "../../reducers/productDetail/productDetailActio
 import ProductImageCarousel from "../common/ProductImageCarousel"
 import ErrorBoundary from "../../helpers/ErrorBoundary"
 import ErrorMessage from "../common/ErrorMessage"
+import Loader from "../common/Loader"
 
 const ProductDetails = () => {
     const { loading, productDetails, error } = useSelector((state) => state.productDetailReducer)
@@ -19,20 +20,17 @@ const ProductDetails = () => {
     return (
         <ErrorBoundary>
             <div className="productDetail-container mt-5">
-                {loading && <div>Loading...</div>}
-                {error && <ErrorMessage error={error}/>}
+                {loading && <Loader/>}
+                {error && <ErrorMessage error={error} />}
                 {"id" in productDetails &&
                     <>
-                        <div className="d-flex gap-3 justify-content-around">
+                        <div className="d-flex gap-3 justify-content-around productDetail">
 
-                            <div className="align-items-center d-flex justify-content-center w-50">
+                            <div className="align-items-center d-flex justify-content-center product-image">
 
-                                {/* <div className="product-image">
-                            <img className="img-fit" src={productDetails?.images[0]} alt="product-image" />
-                        </div> */}
                                 <ProductImageCarousel imageArr={productDetails?.images ?? []} />
                             </div>
-                            <div className="product-detial-right w-25">
+                            <div className="product-detial-right">
                                 <div className="product-brand">{productDetails.brand}</div>
                                 <div className="product-title">{productDetails.title}</div>
                                 <div className="product-category">{productDetails.category}</div>

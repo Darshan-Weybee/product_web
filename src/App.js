@@ -7,7 +7,7 @@ function App({children}) {
   return (
     <div className="App">
       <Navbar/>
-      <Outlet/>
+      <div className="main-container"><Outlet/></div>
     </div>
   );
 }

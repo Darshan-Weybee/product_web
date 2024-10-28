@@ -4,7 +4,7 @@
 
 .menu-popup{
     position: fixed;
-    width: 15%;
+    width: 17%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     right: 35px;
     padding: 15px 15px;
@@ -37,4 +37,25 @@
 
 .hidden{
     display: none;
+}
+
+@media screen and (max-width: 1199px) {
+    .menu-popup{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .menu-popup{
+        width: 25%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .menu-popup{
+        width: 34%;
+    }
+}
+@media screen and (max-width: 575px) {
+    .menu-popup{
+        width: 40%;
+    }
 }

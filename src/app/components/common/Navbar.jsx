@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import { CHANGE_PASSWORD, EDIT_PROFILE, HOME_PAGE, LOGIN_PAGE } from "../../helpers/routes"
+import { CHANGE_PASSWORD, HOME_PAGE, LOGIN_PAGE, PROFILE } from "../../helpers/routes"
 import { useState } from "react"
 import { AUTH_LOCAL_STORAGE_KEY } from "../../helpers/constants";
 
@@ -14,14 +14,14 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="navbar navbar-expand bg-body-tertiary">
             <div className="container-fluid">
                 <Link className="navbar-brand fw-semibold" to={HOME_PAGE}>
                     <span className="webNam-P-C">P</span>eak<span className="webNam-P-C">C</span>art
                 </Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
-                </button>
+                </button> */}
                 <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <Link className="nav-link active" aria-current="page" to={HOME_PAGE}>Home</Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
                     </button>
                     <div className={`menu-popup ${show ? "show" : "hidden"}`}>
                         <div className="px-3 py-2 menu-item">
-                            <Link className="" to={EDIT_PROFILE}>Edit Profile</Link>
+                            <Link className="" to={PROFILE}>Profile</Link>
                         </div>
                         <div className="px-3 py-2 menu-item">
                             <Link className="" to={CHANGE_PASSWORD}>Change Password</Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
     )
 }
 

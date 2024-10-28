@@ -1,51 +1,72 @@
-.product-image{
+.productDetail {
+    flex-direction: row;
+}
+
+.product-image {
     width: 50%;
 }
 
-.product-title{
+.product-detial-right{
+    width: 25%;
+}
+
+.product-title {
     text-transform: uppercase;
     font-size: 1.25rem;
     font-weight: 400;
 }
 
-.product-category{
+.product-category {
     font-size: 0.875rem;
     font-weight: 300;
     text-transform: capitalize;
 }
 
-.product-brand{
+.product-brand {
     font-weight: 300;
     font-size: 1rem;
 }
 
-.product-price-tag{
+.product-price-tag {
     font-size: 1.1rem;
     font-weight: 400;
     color: gray;
 }
 
-.product-price-rate{
+.product-price-rate {
     font-size: 1.2rem;
     font-weight: 400;
 }
 
-.product-discount-tag{
+.product-discount-tag {
     font-size: 1.1rem;
     font-weight: 400;
     color: gray;
 }
 
-.product-discount{
+.product-discount {
     font-size: 1.2rem;
     font-weight: 400;
 }
 
-.star-img-detail{
+.star-img-detail {
     width: 35%;
 }
 
-.product-rating{
+.product-rating {
     font-size: 1.2rem;
     font-weight: 400;
+}
+
+
+@media screen and (max-width: 1199px) {
+    .productDetail {
+        flex-direction: column;
+    }
+    .product-image {
+        width: 100%;
+    }
+    .product-detial-right{
+        width: 100%;
+    }
 }

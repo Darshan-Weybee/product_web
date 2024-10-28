@@ -5,6 +5,8 @@
 @import './app/assets/styles/carousel.css';
 @import './app/assets/styles/Navrbar.css';
 @import './app/assets/styles/auth.css';
+@import './app/assets/styles/pagination.css';
+@import "./app/assets/styles/profile.css";
 
 body {
   margin: 0;

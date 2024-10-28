@@ -8,4 +8,4 @@ export const SIGNUP_PAGE = "/signup"
 
 export const CHANGE_PASSWORD = "/change-password"
 
-export const EDIT_PROFILE = "/edit-profile"
+export const PROFILE = "/profile"

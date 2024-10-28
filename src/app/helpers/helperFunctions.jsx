@@ -35,3 +35,11 @@ export const getUserDetailsFromLocalStorage = () => {
   console.log(userDetails, "fromlocal");
   return userDetails
 }
+
+export function getSearchParameter(search) {
+  const params = {};
+  search.forEach((value, key) => {
+    params[key] = value;
+  });
+  return { ...params };
+}

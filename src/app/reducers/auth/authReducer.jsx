@@ -19,7 +19,7 @@ import { SAVE_USER_CRED, UPDATE_USER_PASSWORD, UPDATE_USER_PROFILE } from "../ac
         };
       case UPDATE_USER_PASSWORD:
         return {
-          userData: {...state.userData, Password : action.payload.Password}
+          userData: {...state.userData, Password : action.payload.NewPassword}
         };
       default:
         return state;

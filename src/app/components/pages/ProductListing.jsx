@@ -1,30 +1,39 @@
-import { useEffect } from "react"
+import { useEffect, useMemo } from "react"
 import { getProducList } from "../../reducers/productListing/productListingAction"
 import { useDispatch, useSelector } from "react-redux"
 import ErrorBoundary from "../../helpers/ErrorBoundary"
 import { PRODUCT_DETAIL_PAGE } from "../../helpers/routes"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import ErrorMessage from "../common/ErrorMessage"
+import Pagination from "../common/Pagination"
+import { pageLimit } from "../../helpers/constants"
+import { getSearchParameter } from "../../helpers/helperFunctions"
+import Loader from "../common/Loader"
 
 const ProductListing = () => {
     const {loading, products,error} = useSelector((state) => state.productListReducer)
     const dispatch = useDispatch()
+    const [searchParam, setSearchParam] = useSearchParams();
+    const searchObj = useMemo(
+      () => getSearchParameter(searchParam),
+      [searchParam]
+    );
 
     useEffect(() => {
-        dispatch(getProducList({ limit: 8, page: 1 }))
-    }, [])
+        dispatch(getProducList({ limit: pageLimit, skip: (searchObj?.PageNumber ?? 1 )*pageLimit }))
+    }, [searchParam, searchObj])
 
     return (
         <ErrorBoundary>
             <div>
-                <h2>Products</h2>
-                {loading && <div>Loading...</div>}
+                <h3>Products</h3>
+                {loading && <Loader/>}
                 {error && <ErrorMessage error={error}/>}
-                {products?.products?.length > 0 &&
+                {!loading && products?.products?.length > 0 &&
                     <div className="productList-container">
                         {products?.products?.map(product => {
                             return (
-                                <div className="d-flex flex-column px-3 py-2" key={product.id}>
+                                <div className="d-flex flex-column px-3 py-2 product-item" key={product.id}>
                                     <div className="thumbnail-container m-auto">
                                         <img className="img-fit" src={product.thumbnail} alt="thumb-image" />
                                     </div>
@@ -55,6 +64,7 @@ const ProductListing = () => {
                         })}
                     </div>
                 }
+                {products?.products?.length > 0 && <Pagination/>}
             </div>
         </ErrorBoundary>
     )

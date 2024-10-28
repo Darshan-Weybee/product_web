@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { createBrowserRouter } from "react-router-dom";
-import { CHANGE_PASSWORD, EDIT_PROFILE, HOME_PAGE, LOGIN_PAGE, PRODUCT_DETAIL_PAGE, SIGNUP_PAGE } from "../helpers/routes";
-import ProductListing from "../components/pages/ProductListing";
-import ProductDetails from "../components/pages/ProductDetails";
+import { CHANGE_PASSWORD, HOME_PAGE, LOGIN_PAGE, PRODUCT_DETAIL_PAGE, PROFILE, SIGNUP_PAGE } from "../helpers/routes";
 import Login from '../components/pages/Login';
 import SignUp from '../components/pages/SignUp';
 import App from '../../App';
 import AuthGuard from '../components/common/AuthGuard';
 import ChangePassword from '../components/pages/ChangePassword';
-import EditProfile from '../components/pages/EditProfile';
+import Profile from '../components/pages/Profile';
+import Loader from '../components/common/Loader';
+
+
+const ProductListing = React.lazy(() => import("../components/pages/ProductListing"));
+const ProductDetails = React.lazy(() => import("../components/pages/ProductDetails"));
 
 export const router = createBrowserRouter([
     {
@@ -16,19 +19,19 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: HOME_PAGE,
-                element: <AuthGuard><ProductListing /></AuthGuard>
+                element: <AuthGuard><React.Suspense fallback={<Loader />}><ProductListing /> </React.Suspense ></AuthGuard>
             },
             {
                 path: `${PRODUCT_DETAIL_PAGE}/:id`,
-                element: <AuthGuard><ProductDetails /></AuthGuard>
+                element: <AuthGuard><React.Suspense fallback={<Loader />}><ProductDetails /> </React.Suspense ></AuthGuard>
             },
             {
                 path: CHANGE_PASSWORD,
                 element: <AuthGuard><ChangePassword /></AuthGuard>
             },
             {
-                path: EDIT_PROFILE,
-                element: <AuthGuard><EditProfile /></AuthGuard>
+                path: PROFILE,
+                element: <AuthGuard><Profile /></AuthGuard>
             }
         ]
     },

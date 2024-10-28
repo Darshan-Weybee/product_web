@@ -1,0 +1,33 @@
+.table-list-pagination-btn {
+    padding: 0.3rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 0.3rem;
+    border: none;
+    background: none;
+    color: #68647b;
+}
+
+.table-list-pagination-btn:hover{
+    z-index: 2;
+    color: #009ef7;
+    background-color: #f4f6fa;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.table-list-active {
+    background-color: #009ef7; 
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.pagination-btn-disable{
+    background-color: transparent;
+    cursor: default;
+}
+.pagination-btn-disable:hover{
+    background-color: transparent!important;
+    cursor: default !important;
+    color: black!important;
+}

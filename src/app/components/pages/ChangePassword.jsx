@@ -13,14 +13,10 @@ import { object, string, ref } from "yup";
 const schema = object().shape({
     CurrentPassword: string().required("Current password is required"),
     NewPassword: string().required("New password is required"),
-    ConfirmPassword: string()
-      .when("NewPassword", {
-        is: (val) => (val && val.length > 0 ? true : false),
-        then: string().oneOf(
+    ConfirmPassword: string().oneOf(
           [ref("NewPassword")],
           "New password and Confirm password didn't match"
-        ),
-      })
+        )
       .required("Password confirmation is required"),
   });
 
@@ -33,7 +29,7 @@ const ChangePassword = () => {
 
     console.log(errors);
     const onSubmit = (data) => {
-
+        console.log("form submitted");
         if(userData.Password == data.CurrentPassword){   
             dispatch(updateUserPassword(data))
             navigate(HOME_PAGE)
@@ -46,23 +42,23 @@ const ChangePassword = () => {
         <ErrorBoundary>
             <div>
                 <form
-                    className="centerForm"
+                    className="centerForm auth-form"
                     onSubmit={handleSubmit(onSubmit)}>
                     <div className="fs-3 ms-1 mb-4 fw-semibold text-dark">Change Password</div>
                     <ErrorMessage error={error}/>
                     <div className="d-flex flex-column gap-4 my-4">
                         <div className="input-fields mb-2">
-                            <Input placeholder="CurrentPassword" type="text" register={register} name="CurrentPassword" className="" />
+                            <Input placeholder="Current Password" type="text" register={register} name="CurrentPassword" className="" />
                             {errors?.CurrentPassword?.message && <FormError error={errors?.CurrentPassword?.message}/>}
                         
                         </div>
                         <div className="input-fields mb-2">
-                            <Input placeholder="NewPassword" type="text" register={register} name="NewPassword" className="" />
+                            <Input placeholder="New Password" type="text" register={register} name="NewPassword" className="" />
                             {errors?.NewPassword?.message && <FormError error={errors?.NewPassword?.message}/>}
                         
                         </div>
                         <div className="input-fields">
-                            <Input placeholder="ConfirmPassword" type="text" register={register} name="ConfirmPassword" className="" />
+                            <Input placeholder="Confirm Password" type="text" register={register} name="ConfirmPassword" className="" />
                             {errors?.ConfirmPassword?.message && <FormError error={errors?.ConfirmPassword?.message}/>}
                         </div>
                     </div>

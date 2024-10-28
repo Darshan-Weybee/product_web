@@ -56,7 +56,7 @@ const Login = () => {
         <ErrorBoundary>
             <div>
                 <form
-                    className="centerForm"
+                    className="centerForm auth-form"
                     onSubmit={handleSubmit(onSubmit)}>
                     <div className="fs-3 ms-1 mb-4 fw-semibold text-dark">Sign In</div>
                     <ErrorMessage error={error}/>
