@@ -21,8 +21,7 @@
 .input-fields input {
     width: 100%;
     height: 100%;
-    outline: 2px solid #727272;
-    /* background-color: #000000; */
+    outline: 2px solid var(--input-fields-outline);
     border: none;
     border-radius: 8px;
     padding: 8px 10px;
@@ -30,16 +29,16 @@
 }
 
 .input-fields input:focus {
-    outline: 2px solid #1f3040;
+    outline: 2px solid var(--input-fields-outline-focus);
 }
 
 .form-button button {
-    background-color: #ffb329;
-    color: #000000;
+    background-color: var(--btn-bg-color);
+    color: var(--black);
     transition: 0.4s ease;
 }
 
 .form-button button:hover {
-    background-color: orange;
-    color: #000000;
+    background-color: var(--orange);
+    color: var(--black);
 }

@@ -13,8 +13,8 @@
 }
 
 .profile-btn{
-    color: white !important;
-    background-color: orange !important;
+    color: var(--white)!important;
+    background-color: var(--orange) !important;
 }
 
 .profile-image{
@@ -24,13 +24,13 @@
 .user-name{
     font-weight: semibold;
     font-size: 14px;
-    color: gray;
+    color: var(--gray);
 }
 
 .prfile-input-fileds{
     border-radius: 4px;
     outline: none;
-    border: 1px solid gray;
+    border: 1px solid var(--gray);
 }
 
 @media screen and (max-width: 1199px) {

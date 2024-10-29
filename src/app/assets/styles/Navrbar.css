@@ -1,5 +1,5 @@
 .webNam-P-C{
- color:orange;
+ color:var(--orange);
 }
 
 .menu-popup{
@@ -14,21 +14,21 @@
 }
 
 .menu-item{
-    color: #7e8299;
+    color: var(--menu-item);
     text-decoration: none;
 }
 
 .menu-item a{
-    color: #7e8299;
+    color: var(--menu-item);
     text-decoration: none;
 }
 
 .menu-item:hover{
-    background-color: #f4f6fa;
+    background-color: var(--white-bg);
 }
 
 .menu-item a:hover{
-    color: #009ef7;
+    color: var(--blue-text);
 }
 
 .show{
